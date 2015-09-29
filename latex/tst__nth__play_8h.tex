@@ -1,0 +1,151 @@
+\hypertarget{tst__nth__play_8h}{\section{tst\-\_\-nth\-\_\-play.\-h File Reference}
+\label{tst__nth__play_8h}\index{tst\-\_\-nth\-\_\-play.\-h@{tst\-\_\-nth\-\_\-play.\-h}}
+}
+
+
+tests the nth play after the first play the board can be at any state of valid words then some tiles are added to the already existing tiles  
+
+
+{\ttfamily \#include $<$stdio.\-h$>$}\\*
+{\ttfamily \#include $<$stdlib.\-h$>$}\\*
+{\ttfamily \#include \char`\"{}tile.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}bag.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}board.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}ui.\-h\char`\"{}}\\*
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{tst__nth__play_8h_a788f9e3de3b4c5fee4e497c41b616b16}{void \hyperlink{tst__nth__play_8h_a788f9e3de3b4c5fee4e497c41b616b16}{test\-\_\-second\-\_\-valid} ()}\label{tst__nth__play_8h_a788f9e3de3b4c5fee4e497c41b616b16}
+
+\begin{DoxyCompactList}\small\item\em second play is tested over a valid first play word the second play adds one word to the board by amending tiles to the existing word to form a new word \end{DoxyCompactList}\item 
+void \hyperlink{tst__nth__play_8h_a9ea17057f654c401bbc97000d6cf4383}{test\-\_\-second\-\_\-valid2} ()
+\begin{DoxyCompactList}\small\item\em second play is tested over a valid first play word the second play adds two words to the board by amending tiles to the existing word to form 2 new words \end{DoxyCompactList}\item 
+void \hyperlink{tst__nth__play_8h_a02292fb80413364d4d89ba3feb2f3bcb}{test\-\_\-second\-\_\-valid3} ()
+\begin{DoxyCompactList}\small\item\em second play is tested over first play the second play adds 3 words to the board by amending tiles to the existing word to form 3 new words \end{DoxyCompactList}\item 
+void \hyperlink{tst__nth__play_8h_a10d717f446ce538da8e8c494357a2a7d}{test\-\_\-second\-\_\-valid4} ()
+\begin{DoxyCompactList}\small\item\em second play is tested over first play the second play adds 4 words to the board by amending tiles to the existing word to form 4 new words \end{DoxyCompactList}\item 
+void \hyperlink{tst__nth__play_8h_a5777b64689661653416678e357e1f280}{test\-\_\-second\-\_\-invalid} ()
+\begin{DoxyCompactList}\small\item\em second play is tested over first play the second play adds a word that does not exist in the dictionary \end{DoxyCompactList}\item 
+void \hyperlink{tst__nth__play_8h_a6358857b58290e47716db7c09ee38679}{test\-\_\-second\-\_\-invalid2} ()
+\begin{DoxyCompactList}\small\item\em second play is tested over first play the second play adds a word that exists in the dictionary but is nor properly connected This test discovered a bug in the code as the code handeled the case of one tile not connected at all, but this case shows a new word not connected to any tile of the previous turn \end{DoxyCompactList}\item 
+void \hyperlink{tst__nth__play_8h_a781194178820254f9bcc891189b899e9}{test\-\_\-nth\-\_\-valid} ()
+\begin{DoxyCompactList}\small\item\em nth play where the board is in a valid state that can occur after more than one play and a tile is added to add 2 words one horizontal and one vertical \end{DoxyCompactList}\item 
+void \hyperlink{tst__nth__play_8h_ae6cc85fde1ed22cdd8c46bb205a5c2e9}{test\-\_\-nth\-\_\-invalid} ()
+\begin{DoxyCompactList}\small\item\em nth play where the board is in a valid state that can occur after more than one play and a tile is added to add 2 words one horizontal and one vertical but does not exist in the dictionary \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+tests the nth play after the first play the board can be at any state of valid words then some tiles are added to the already existing tiles \begin{DoxyAuthor}{Author}
+Abdallah 
+\end{DoxyAuthor}
+
+
+\subsection{Function Documentation}
+\hypertarget{tst__nth__play_8h_ae6cc85fde1ed22cdd8c46bb205a5c2e9}{\index{tst\-\_\-nth\-\_\-play.\-h@{tst\-\_\-nth\-\_\-play.\-h}!test\-\_\-nth\-\_\-invalid@{test\-\_\-nth\-\_\-invalid}}
+\index{test\-\_\-nth\-\_\-invalid@{test\-\_\-nth\-\_\-invalid}!tst_nth_play.h@{tst\-\_\-nth\-\_\-play.\-h}}
+\subsubsection[{test\-\_\-nth\-\_\-invalid}]{\setlength{\rightskip}{0pt plus 5cm}void test\-\_\-nth\-\_\-invalid (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{tst__nth__play_8h_ae6cc85fde1ed22cdd8c46bb205a5c2e9}
+
+
+nth play where the board is in a valid state that can occur after more than one play and a tile is added to add 2 words one horizontal and one vertical but does not exist in the dictionary 
+
+\begin{DoxyAuthor}{Author}
+Abdallah 
+\end{DoxyAuthor}
+\hypertarget{tst__nth__play_8h_a781194178820254f9bcc891189b899e9}{\index{tst\-\_\-nth\-\_\-play.\-h@{tst\-\_\-nth\-\_\-play.\-h}!test\-\_\-nth\-\_\-valid@{test\-\_\-nth\-\_\-valid}}
+\index{test\-\_\-nth\-\_\-valid@{test\-\_\-nth\-\_\-valid}!tst_nth_play.h@{tst\-\_\-nth\-\_\-play.\-h}}
+\subsubsection[{test\-\_\-nth\-\_\-valid}]{\setlength{\rightskip}{0pt plus 5cm}void test\-\_\-nth\-\_\-valid (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{tst__nth__play_8h_a781194178820254f9bcc891189b899e9}
+
+
+nth play where the board is in a valid state that can occur after more than one play and a tile is added to add 2 words one horizontal and one vertical 
+
+\begin{DoxyAuthor}{Author}
+Abdallah 
+\end{DoxyAuthor}
+\hypertarget{tst__nth__play_8h_a5777b64689661653416678e357e1f280}{\index{tst\-\_\-nth\-\_\-play.\-h@{tst\-\_\-nth\-\_\-play.\-h}!test\-\_\-second\-\_\-invalid@{test\-\_\-second\-\_\-invalid}}
+\index{test\-\_\-second\-\_\-invalid@{test\-\_\-second\-\_\-invalid}!tst_nth_play.h@{tst\-\_\-nth\-\_\-play.\-h}}
+\subsubsection[{test\-\_\-second\-\_\-invalid}]{\setlength{\rightskip}{0pt plus 5cm}void test\-\_\-second\-\_\-invalid (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{tst__nth__play_8h_a5777b64689661653416678e357e1f280}
+
+
+second play is tested over first play the second play adds a word that does not exist in the dictionary 
+
+\begin{DoxyAuthor}{Author}
+Abdallah 
+\end{DoxyAuthor}
+\hypertarget{tst__nth__play_8h_a6358857b58290e47716db7c09ee38679}{\index{tst\-\_\-nth\-\_\-play.\-h@{tst\-\_\-nth\-\_\-play.\-h}!test\-\_\-second\-\_\-invalid2@{test\-\_\-second\-\_\-invalid2}}
+\index{test\-\_\-second\-\_\-invalid2@{test\-\_\-second\-\_\-invalid2}!tst_nth_play.h@{tst\-\_\-nth\-\_\-play.\-h}}
+\subsubsection[{test\-\_\-second\-\_\-invalid2}]{\setlength{\rightskip}{0pt plus 5cm}void test\-\_\-second\-\_\-invalid2 (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{tst__nth__play_8h_a6358857b58290e47716db7c09ee38679}
+
+
+second play is tested over first play the second play adds a word that exists in the dictionary but is nor properly connected This test discovered a bug in the code as the code handeled the case of one tile not connected at all, but this case shows a new word not connected to any tile of the previous turn 
+
+\begin{DoxyAuthor}{Author}
+Abdallah
+\end{DoxyAuthor}
+second play is tested over first play the second play adds a word that exists in the dictionary but is nor properly connected This test discovered a bug in the code as the code handeled the case of one tile not connected at all, but this case shows a new word not connected to any tile of the previous turn
+
+\begin{DoxyAuthor}{Author}
+Abdallah 
+\end{DoxyAuthor}
+\hypertarget{tst__nth__play_8h_a9ea17057f654c401bbc97000d6cf4383}{\index{tst\-\_\-nth\-\_\-play.\-h@{tst\-\_\-nth\-\_\-play.\-h}!test\-\_\-second\-\_\-valid2@{test\-\_\-second\-\_\-valid2}}
+\index{test\-\_\-second\-\_\-valid2@{test\-\_\-second\-\_\-valid2}!tst_nth_play.h@{tst\-\_\-nth\-\_\-play.\-h}}
+\subsubsection[{test\-\_\-second\-\_\-valid2}]{\setlength{\rightskip}{0pt plus 5cm}void test\-\_\-second\-\_\-valid2 (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{tst__nth__play_8h_a9ea17057f654c401bbc97000d6cf4383}
+
+
+second play is tested over a valid first play word the second play adds two words to the board by amending tiles to the existing word to form 2 new words 
+
+\begin{DoxyAuthor}{Author}
+Abdallah 
+\end{DoxyAuthor}
+\hypertarget{tst__nth__play_8h_a02292fb80413364d4d89ba3feb2f3bcb}{\index{tst\-\_\-nth\-\_\-play.\-h@{tst\-\_\-nth\-\_\-play.\-h}!test\-\_\-second\-\_\-valid3@{test\-\_\-second\-\_\-valid3}}
+\index{test\-\_\-second\-\_\-valid3@{test\-\_\-second\-\_\-valid3}!tst_nth_play.h@{tst\-\_\-nth\-\_\-play.\-h}}
+\subsubsection[{test\-\_\-second\-\_\-valid3}]{\setlength{\rightskip}{0pt plus 5cm}void test\-\_\-second\-\_\-valid3 (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{tst__nth__play_8h_a02292fb80413364d4d89ba3feb2f3bcb}
+
+
+second play is tested over first play the second play adds 3 words to the board by amending tiles to the existing word to form 3 new words 
+
+\begin{DoxyAuthor}{Author}
+Abdallah 
+\end{DoxyAuthor}
+\hypertarget{tst__nth__play_8h_a10d717f446ce538da8e8c494357a2a7d}{\index{tst\-\_\-nth\-\_\-play.\-h@{tst\-\_\-nth\-\_\-play.\-h}!test\-\_\-second\-\_\-valid4@{test\-\_\-second\-\_\-valid4}}
+\index{test\-\_\-second\-\_\-valid4@{test\-\_\-second\-\_\-valid4}!tst_nth_play.h@{tst\-\_\-nth\-\_\-play.\-h}}
+\subsubsection[{test\-\_\-second\-\_\-valid4}]{\setlength{\rightskip}{0pt plus 5cm}void test\-\_\-second\-\_\-valid4 (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{tst__nth__play_8h_a10d717f446ce538da8e8c494357a2a7d}
+
+
+second play is tested over first play the second play adds 4 words to the board by amending tiles to the existing word to form 4 new words 
+
+\begin{DoxyAuthor}{Author}
+Abdallah
+\end{DoxyAuthor}
+second play is tested over first play the second play adds 4 words to the board by amending tiles to the existing word to form 4 new words
+
+\begin{DoxyAuthor}{Author}
+Abdallah 
+\end{DoxyAuthor}

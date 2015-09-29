@@ -1,0 +1,611 @@
+\hypertarget{board_8h}{\section{board.\-h File Reference}
+\label{board_8h}\index{board.\-h@{board.\-h}}
+}
+
+
+Header file to describe prototypes for functions related to the scrabble board.  
+
+
+{\ttfamily \#include $<$stdio.\-h$>$}\\*
+{\ttfamily \#include $<$stdlib.\-h$>$}\\*
+{\ttfamily \#include \char`\"{}tile.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}bag.\-h\char`\"{}}\\*
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{board_8h_aa070a6d6fc79db04642cc0328fdcd451}{word\-\_\-len}~32
+\begin{DoxyCompactList}\small\item\em length of any found word; each string will save the found word, then the number of D\-W, T\-W squares related to word the word length is 32 = 15 ( max word ) + \textbackslash{}0 + D\-W + \textbackslash{}0 + T\-W + \textbackslash{}0 + 2 characters to store starting row + \textbackslash{}0 \end{DoxyCompactList}\item 
+\hypertarget{board_8h_ad42d1b10fe384ff2049eec63d766ae4c}{\#define \hyperlink{board_8h_ad42d1b10fe384ff2049eec63d766ae4c}{max\-\_\-rc}~15}\label{board_8h_ad42d1b10fe384ff2049eec63d766ae4c}
+
+\begin{DoxyCompactList}\small\item\em the number of rows or columns in the scrabble game \end{DoxyCompactList}\item 
+\hypertarget{board_8h_a1a808f7d473e0027f882abc09ab63625}{\#define \hyperlink{board_8h_a1a808f7d473e0027f882abc09ab63625}{max\-\_\-words}~8}\label{board_8h_a1a808f7d473e0027f882abc09ab63625}
+
+\begin{DoxyCompactList}\small\item\em maximum number of words that can be played in one turn \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{board_8h_a3775a78d451fdab09fc9ee85d79356a7}{new\-\_\-board} (\hyperlink{structtile}{tile} $\ast$board\mbox{[}\hyperlink{ui_8c_ad42d1b10fe384ff2049eec63d766ae4c}{max\-\_\-rc}\mbox{]}\mbox{[}\hyperlink{ui_8c_ad42d1b10fe384ff2049eec63d766ae4c}{max\-\_\-rc}\mbox{]})
+\begin{DoxyCompactList}\small\item\em new\-\_\-board function returns a 2\-D array of pointer 2 tiles Each tile pointer is pointing to an empty, D\-L, D\-W, T\-L, T\-W tiles. \end{DoxyCompactList}\item 
+void \hyperlink{board_8h_a4fec3f53ddeb6c8ea5c9c2c1bc78b2c8}{display\-\_\-board} (\hyperlink{structtile}{tile} $\ast$board\mbox{[}\hyperlink{ui_8c_ad42d1b10fe384ff2049eec63d766ae4c}{max\-\_\-rc}\mbox{]}\mbox{[}\hyperlink{ui_8c_ad42d1b10fe384ff2049eec63d766ae4c}{max\-\_\-rc}\mbox{]})
+\begin{DoxyCompactList}\small\item\em display\-\_\-board function displays the scrabble board to the user. \end{DoxyCompactList}\item 
+int \hyperlink{board_8h_a2b62b1ca7d12590bcf8c2c3a52a5d051}{check\-\_\-board} (\hyperlink{structtile}{tile} $\ast$board\mbox{[}\hyperlink{ui_8c_ad42d1b10fe384ff2049eec63d766ae4c}{max\-\_\-rc}\mbox{]}\mbox{[}\hyperlink{ui_8c_ad42d1b10fe384ff2049eec63d766ae4c}{max\-\_\-rc}\mbox{]}, \hyperlink{structtile}{tile} $\ast$board\-\_\-prev\mbox{[}\hyperlink{ui_8c_ad42d1b10fe384ff2049eec63d766ae4c}{max\-\_\-rc}\mbox{]}\mbox{[}\hyperlink{ui_8c_ad42d1b10fe384ff2049eec63d766ae4c}{max\-\_\-rc}\mbox{]}, char \hyperlink{tst__nth__play_8c_a0d590f00dc49b35230e124f4c9dd534c}{str}\mbox{[}\hyperlink{ui_8c_a1a808f7d473e0027f882abc09ab63625}{max\-\_\-words}\mbox{]}\mbox{[}\hyperlink{ui_8c_aa070a6d6fc79db04642cc0328fdcd451}{word\-\_\-len}\mbox{]}, int $\ast$temp\-\_\-score)
+\begin{DoxyCompactList}\small\item\em Checks board for the added word or words Checks the validity of the added tiles in terms of the position of the tiles, and existence in dictionary returns the added word/words if valid in the array of strings. \end{DoxyCompactList}\item 
+int \hyperlink{board_8h_a8354a06da54268d9a7fd14df0e7f8c68}{check\-\_\-first\-\_\-play} (\hyperlink{structtile}{tile} $\ast$board\mbox{[}\hyperlink{ui_8c_ad42d1b10fe384ff2049eec63d766ae4c}{max\-\_\-rc}\mbox{]}\mbox{[}\hyperlink{ui_8c_ad42d1b10fe384ff2049eec63d766ae4c}{max\-\_\-rc}\mbox{]}, char \hyperlink{tst__nth__play_8c_a0d590f00dc49b35230e124f4c9dd534c}{str}\mbox{[}\hyperlink{ui_8c_aa070a6d6fc79db04642cc0328fdcd451}{word\-\_\-len}\mbox{]})
+\begin{DoxyCompactList}\small\item\em used by check\-\_\-board function to check the first play it is considered as a special case as\-: only one word is added, the word does not have to touch an already existing word \end{DoxyCompactList}\item 
+void \hyperlink{board_8h_a6a9559aec895771043262e6218b5b3fc}{amend\-\_\-letter\-\_\-right} (\hyperlink{structtile}{tile} $\ast$board\mbox{[}\hyperlink{ui_8c_ad42d1b10fe384ff2049eec63d766ae4c}{max\-\_\-rc}\mbox{]}\mbox{[}\hyperlink{ui_8c_ad42d1b10fe384ff2049eec63d766ae4c}{max\-\_\-rc}\mbox{]}, int i, int j, char \hyperlink{tst__nth__play_8c_a0d590f00dc49b35230e124f4c9dd534c}{str}\mbox{[}\hyperlink{ui_8c_aa070a6d6fc79db04642cc0328fdcd451}{word\-\_\-len}\mbox{]}, int $\ast$index)
+\begin{DoxyCompactList}\small\item\em used by check\-\_\-first\-\_\-play function, gets the letter in the tile to the right and amends it to the string Recusrively continues until the string is amended with all letters aligned horizontally \end{DoxyCompactList}\item 
+void \hyperlink{board_8h_a1844e43d35d069bbba59b3ec540ea5e3}{amend\-\_\-letter\-\_\-right\-\_\-n} (\hyperlink{structtile}{tile} $\ast$board\mbox{[}\hyperlink{ui_8c_ad42d1b10fe384ff2049eec63d766ae4c}{max\-\_\-rc}\mbox{]}\mbox{[}\hyperlink{ui_8c_ad42d1b10fe384ff2049eec63d766ae4c}{max\-\_\-rc}\mbox{]}, \hyperlink{structtile}{tile} $\ast$board\-\_\-prev\mbox{[}\hyperlink{ui_8c_ad42d1b10fe384ff2049eec63d766ae4c}{max\-\_\-rc}\mbox{]}\mbox{[}\hyperlink{ui_8c_ad42d1b10fe384ff2049eec63d766ae4c}{max\-\_\-rc}\mbox{]}, int i, int j, char \hyperlink{tst__nth__play_8c_a0d590f00dc49b35230e124f4c9dd534c}{str}\mbox{[}\hyperlink{ui_8c_aa070a6d6fc79db04642cc0328fdcd451}{word\-\_\-len}\mbox{]}, int $\ast$index, int $\ast$temp\-\_\-temp, int $\ast$D\-W\-\_\-flag, int $\ast$T\-W\-\_\-flag, int $\ast$connection\-\_\-flag)
+\begin{DoxyCompactList}\small\item\em Gets the letter in the tile to the right and amends it to the string for the nth play where n $>$ 1 Recusrively continues until the string is amended with all letters aligned horizontally used inside check\-\_\-board function to help getting the added word. \end{DoxyCompactList}\item 
+void \hyperlink{board_8h_aa64a07088e2cd195eb6782d34eb3efb1}{amend\-\_\-letter\-\_\-bottom\-\_\-n} (\hyperlink{structtile}{tile} $\ast$board\mbox{[}\hyperlink{ui_8c_ad42d1b10fe384ff2049eec63d766ae4c}{max\-\_\-rc}\mbox{]}\mbox{[}\hyperlink{ui_8c_ad42d1b10fe384ff2049eec63d766ae4c}{max\-\_\-rc}\mbox{]}, \hyperlink{structtile}{tile} $\ast$board\-\_\-prev\mbox{[}\hyperlink{ui_8c_ad42d1b10fe384ff2049eec63d766ae4c}{max\-\_\-rc}\mbox{]}\mbox{[}\hyperlink{ui_8c_ad42d1b10fe384ff2049eec63d766ae4c}{max\-\_\-rc}\mbox{]}, int i, int j, char \hyperlink{tst__nth__play_8c_a0d590f00dc49b35230e124f4c9dd534c}{str}\mbox{[}\hyperlink{ui_8c_aa070a6d6fc79db04642cc0328fdcd451}{word\-\_\-len}\mbox{]}, int $\ast$index, int $\ast$temp\-\_\-temp, int $\ast$D\-W\-\_\-flag, int $\ast$T\-W\-\_\-flag, int $\ast$connection\-\_\-flag)
+\begin{DoxyCompactList}\small\item\em Gets the letter in the tile to the bottom and amends it to the string for the nth play where n $>$ 1 Recusrively continues until the string is amended with all letters aligned horizontally used inside check\-\_\-board function to help getting the added word. \end{DoxyCompactList}\item 
+void \hyperlink{board_8h_a2e2f22335f139f762f82759c1d465c40}{amend\-\_\-letter\-\_\-bottom} (\hyperlink{structtile}{tile} $\ast$board\mbox{[}\hyperlink{ui_8c_ad42d1b10fe384ff2049eec63d766ae4c}{max\-\_\-rc}\mbox{]}\mbox{[}\hyperlink{ui_8c_ad42d1b10fe384ff2049eec63d766ae4c}{max\-\_\-rc}\mbox{]}, int i, int j, char \hyperlink{tst__nth__play_8c_a0d590f00dc49b35230e124f4c9dd534c}{str}\mbox{[}\hyperlink{ui_8c_aa070a6d6fc79db04642cc0328fdcd451}{word\-\_\-len}\mbox{]}, int $\ast$index)
+\begin{DoxyCompactList}\small\item\em used by check\-\_\-first\-\_\-play function, Gets the letter in the tile to the bottom and amends it to the string Recusrively continues until the string is amended with all letters aligned vertically \end{DoxyCompactList}\item 
+\hyperlink{structbag}{bag} \hyperlink{board_8h_aa491cd34ee45c0eced98b0f34f111973}{place\-\_\-tile} (\hyperlink{structbag}{bag} in\-\_\-hand, \hyperlink{structtile}{tile} $\ast$board\mbox{[}\hyperlink{ui_8c_ad42d1b10fe384ff2049eec63d766ae4c}{max\-\_\-rc}\mbox{]}\mbox{[}\hyperlink{ui_8c_ad42d1b10fe384ff2049eec63d766ae4c}{max\-\_\-rc}\mbox{]}, int $\ast$temp\-\_\-score, int $\ast$D\-W\-\_\-flag, int $\ast$T\-W\-\_\-flag)
+\begin{DoxyCompactList}\small\item\em Asks player to place tile on the board and checks whether tile to be placed corresponds to any of the tiles in the player's hand. \end{DoxyCompactList}\item 
+\hyperlink{structbag}{bag} \hyperlink{board_8h_ab1311e13c9be8a44c8a4bcc06dd11aaa}{pickup\-\_\-tile} (\hyperlink{structbag}{bag} in\-\_\-hand, \hyperlink{structtile}{tile} $\ast$board\mbox{[}\hyperlink{ui_8c_ad42d1b10fe384ff2049eec63d766ae4c}{max\-\_\-rc}\mbox{]}\mbox{[}\hyperlink{ui_8c_ad42d1b10fe384ff2049eec63d766ae4c}{max\-\_\-rc}\mbox{]}, int $\ast$temp\-\_\-score, int $\ast$D\-W\-\_\-flag, int $\ast$T\-W\-\_\-flag)
+\begin{DoxyCompactList}\small\item\em Request player for index to remove tile from the board. \end{DoxyCompactList}\item 
+int \hyperlink{board_8h_aa3fa56705b636fcfef1270f907b02fc7}{update\-\_\-score} (int score, int $\ast$tmp\-\_\-score, int $\ast$D\-W\-\_\-flag, int $\ast$T\-W\-\_\-flag)
+\begin{DoxyCompactList}\small\item\em When the player chooses to play his turn, if the added word is valid in terms of position and existence in the dictionary The score of the player is updated with the information of the temp\-\_\-score and the D\-W and T\-W flags used only in the first play. \end{DoxyCompactList}\item 
+int \hyperlink{board_8h_ab1d2a866e5444ea856647ee2cb815e4f}{power} (int x, int n)
+\begin{DoxyCompactList}\small\item\em Power function to return x$^\wedge$n to be used by update\-\_\-score function. \end{DoxyCompactList}\item 
+\hyperlink{structtile}{tile} \hyperlink{board_8h_a3c52d72073937f9e14687ec761c2fa97}{get\-\_\-original} (int i, int j)
+\begin{DoxyCompactList}\small\item\em returns the imaginary tile of the original (empty board) either returns an empty ( Normal tile on the board ), D\-L (Double Letter ), D\-W (Double Word ), T\-L (Triple Letter), T\-W (Triple Word ) \end{DoxyCompactList}\item 
+void \hyperlink{board_8h_afb9aaac2b6e48a4bab1ba57f4287bcac}{copy\-\_\-board} (\hyperlink{structtile}{tile} $\ast$copy\mbox{[}\hyperlink{ui_8c_ad42d1b10fe384ff2049eec63d766ae4c}{max\-\_\-rc}\mbox{]}\mbox{[}\hyperlink{ui_8c_ad42d1b10fe384ff2049eec63d766ae4c}{max\-\_\-rc}\mbox{]}, \hyperlink{structtile}{tile} $\ast$paste\mbox{[}\hyperlink{ui_8c_ad42d1b10fe384ff2049eec63d766ae4c}{max\-\_\-rc}\mbox{]}\mbox{[}\hyperlink{ui_8c_ad42d1b10fe384ff2049eec63d766ae4c}{max\-\_\-rc}\mbox{]})
+\begin{DoxyCompactList}\small\item\em copy the content of the first input board into the second input board \end{DoxyCompactList}\item 
+int \hyperlink{board_8h_a52c31c2930b59895fbafb97f4a361829}{horizontal\-\_\-start} (\hyperlink{structtile}{tile} $\ast$board\mbox{[}\hyperlink{ui_8c_ad42d1b10fe384ff2049eec63d766ae4c}{max\-\_\-rc}\mbox{]}\mbox{[}\hyperlink{ui_8c_ad42d1b10fe384ff2049eec63d766ae4c}{max\-\_\-rc}\mbox{]}, int i, int j)
+\begin{DoxyCompactList}\small\item\em for the nth play where n $>$ 1 the function returns the horizontal starting point of a word Used by the check\-\_\-board function to know where to start amending to right returns the column number that the word starts at \end{DoxyCompactList}\item 
+int \hyperlink{board_8h_aa398f4afb3c7b5fba438ac8945cd83c5}{vertical\-\_\-start} (\hyperlink{structtile}{tile} $\ast$board\mbox{[}\hyperlink{ui_8c_ad42d1b10fe384ff2049eec63d766ae4c}{max\-\_\-rc}\mbox{]}\mbox{[}\hyperlink{ui_8c_ad42d1b10fe384ff2049eec63d766ae4c}{max\-\_\-rc}\mbox{]}, int i, int j)
+\begin{DoxyCompactList}\small\item\em for the nth play where n $>$ 1 the function returns the vertical starting point of a word Used by the check\-\_\-board function to know where to start amending to bottom returns the rows number that the word starts at \end{DoxyCompactList}\item 
+int \hyperlink{board_8h_a4643da841a1ebf90655b3c9446b9ee7f}{is\-\_\-connected} (\hyperlink{structtile}{tile} $\ast$board\mbox{[}\hyperlink{ui_8c_ad42d1b10fe384ff2049eec63d766ae4c}{max\-\_\-rc}\mbox{]}\mbox{[}\hyperlink{ui_8c_ad42d1b10fe384ff2049eec63d766ae4c}{max\-\_\-rc}\mbox{]}, int i, int j)
+\begin{DoxyCompactList}\small\item\em for the nth play where n $>$ 1 the function returns whether the found tile is not connected to any tile on the board -\/$>$ returns 0 connected to a tile in a horizontal way -\/$>$ returns 1 connected to a tile in a vertical way -\/$>$ returns 2 connected to tiles both horizontally and vertically returns 3 \end{DoxyCompactList}\item 
+int \hyperlink{board_8h_a6bf7bf957a9fa045b7d208a9b79d3ead}{is\-\_\-connected\-\_\-to\-\_\-prev} (\hyperlink{structtile}{tile} $\ast$board\-\_\-prev\mbox{[}\hyperlink{ui_8c_ad42d1b10fe384ff2049eec63d766ae4c}{max\-\_\-rc}\mbox{]}\mbox{[}\hyperlink{ui_8c_ad42d1b10fe384ff2049eec63d766ae4c}{max\-\_\-rc}\mbox{]}, int i, int j)
+\begin{DoxyCompactList}\small\item\em returns true i\-F the tile is connected to a tile from the previous turn used by check\-\_\-board to ake sure that at least one of the added tiles is connected to a tile from a previous turn \end{DoxyCompactList}\item 
+void \hyperlink{board_8h_aa93380e887107243739a02e1125c6480}{print\-\_\-words} (char words\mbox{[}\hyperlink{ui_8c_a1a808f7d473e0027f882abc09ab63625}{max\-\_\-words}\mbox{]}\mbox{[}\hyperlink{ui_8c_aa070a6d6fc79db04642cc0328fdcd451}{word\-\_\-len}\mbox{]}, int words\-\_\-count)
+\begin{DoxyCompactList}\small\item\em prints all words stored in the array of strings mainly for testing uses \end{DoxyCompactList}\item 
+void \hyperlink{board_8h_a2735215125c05f9583c668b99bda8fd2}{delimit\-\_\-string} (char word\mbox{[}\hyperlink{ui_8c_aa070a6d6fc79db04642cc0328fdcd451}{word\-\_\-len}\mbox{]}, int start\-\_\-i, int start\-\_\-j, int end\-\_\-i, int end\-\_\-j)
+\begin{DoxyCompactList}\small\item\em saves the starting and ending indices ( row and col number ) in the position \mbox{[}20\mbox{]} for starting row number and \mbox{[}23\mbox{]} for starting col number in position \mbox{[}26\mbox{]} for ending row number and \mbox{[}29\mbox{]} for ending col number \end{DoxyCompactList}\item 
+int \hyperlink{board_8h_af4edd4ec3c11de3861b0a1fdbdc6f4fa}{get\-\_\-starting\-\_\-rows} (char word\mbox{[}\hyperlink{ui_8c_aa070a6d6fc79db04642cc0328fdcd451}{word\-\_\-len}\mbox{]})
+\begin{DoxyCompactList}\small\item\em gets the starting row number for a word stored in the mentioned position in the string \end{DoxyCompactList}\item 
+int \hyperlink{board_8h_a12b37aa16e9873d032dba2ea92ad7194}{get\-\_\-starting\-\_\-col} (char word\mbox{[}\hyperlink{ui_8c_aa070a6d6fc79db04642cc0328fdcd451}{word\-\_\-len}\mbox{]})
+\begin{DoxyCompactList}\small\item\em gets the starting col number for a word stored in the mentioned position in the string \end{DoxyCompactList}\item 
+int \hyperlink{board_8h_a77c41822a2be98830b5f2cfac6ca0e9b}{get\-\_\-ending\-\_\-rows} (char word\mbox{[}\hyperlink{ui_8c_aa070a6d6fc79db04642cc0328fdcd451}{word\-\_\-len}\mbox{]})
+\begin{DoxyCompactList}\small\item\em gets the ending row number for a word stored in the mentioned position in the string \end{DoxyCompactList}\item 
+int \hyperlink{board_8h_a88ffaee36a7c5ffce80d598708342573}{get\-\_\-ending\-\_\-col} (char word\mbox{[}\hyperlink{ui_8c_aa070a6d6fc79db04642cc0328fdcd451}{word\-\_\-len}\mbox{]})
+\begin{DoxyCompactList}\small\item\em gets the ending col number for a word stored in the mentioned position in the string \end{DoxyCompactList}\item 
+int \hyperlink{board_8h_a12b396904113c9f66a672e7cb22246ff}{word\-\_\-repeated} (char new\-\_\-word\mbox{[}\hyperlink{ui_8c_aa070a6d6fc79db04642cc0328fdcd451}{word\-\_\-len}\mbox{]}, char words\mbox{[}\hyperlink{ui_8c_a1a808f7d473e0027f882abc09ab63625}{max\-\_\-words}\mbox{]}\mbox{[}\hyperlink{ui_8c_aa070a6d6fc79db04642cc0328fdcd451}{word\-\_\-len}\mbox{]}, int words\-\_\-count)
+\begin{DoxyCompactList}\small\item\em returns true if the word already exist in the array of strings \end{DoxyCompactList}\item 
+void \hyperlink{board_8h_ac242b7ed7cf98986c5e81668fda1dacc}{strcopy} (char str1\mbox{[}\hyperlink{ui_8c_aa070a6d6fc79db04642cc0328fdcd451}{word\-\_\-len}\mbox{]}, char str2\mbox{[}\hyperlink{ui_8c_aa070a6d6fc79db04642cc0328fdcd451}{word\-\_\-len}\mbox{]})
+\begin{DoxyCompactList}\small\item\em copies the second input string into the first one because the strcop will not be sufficient as the strings used here have more than one \textbackslash{}0 \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Header file to describe prototypes for functions related to the scrabble board. \begin{DoxyAuthor}{Author}
+Fred and Abdallah 
+\end{DoxyAuthor}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{board_8h_aa070a6d6fc79db04642cc0328fdcd451}{\index{board.\-h@{board.\-h}!word\-\_\-len@{word\-\_\-len}}
+\index{word\-\_\-len@{word\-\_\-len}!board.h@{board.\-h}}
+\subsubsection[{word\-\_\-len}]{\setlength{\rightskip}{0pt plus 5cm}\#define word\-\_\-len~32}}\label{board_8h_aa070a6d6fc79db04642cc0328fdcd451}
+
+
+length of any found word; each string will save the found word, then the number of D\-W, T\-W squares related to word the word length is 32 = 15 ( max word ) + \textbackslash{}0 + D\-W + \textbackslash{}0 + T\-W + \textbackslash{}0 + 2 characters to store starting row + \textbackslash{}0 
+
+
+\begin{DoxyItemize}
+\item 2 characters to store starting col + \textbackslash{}0 + 2 characters to store ending row + \textbackslash{}0 + 2 characters to store ending col + \textbackslash{}0 
+\end{DoxyItemize}
+
+\subsection{Function Documentation}
+\hypertarget{board_8h_a2e2f22335f139f762f82759c1d465c40}{\index{board.\-h@{board.\-h}!amend\-\_\-letter\-\_\-bottom@{amend\-\_\-letter\-\_\-bottom}}
+\index{amend\-\_\-letter\-\_\-bottom@{amend\-\_\-letter\-\_\-bottom}!board.h@{board.\-h}}
+\subsubsection[{amend\-\_\-letter\-\_\-bottom}]{\setlength{\rightskip}{0pt plus 5cm}void amend\-\_\-letter\-\_\-bottom (
+\begin{DoxyParamCaption}
+\item[{{\bf tile} $\ast$}]{board\mbox{[}max\-\_\-rc\mbox{]}\mbox{[}max\-\_\-rc\mbox{]}, }
+\item[{int}]{rows, }
+\item[{int}]{cols, }
+\item[{char}]{str\mbox{[}word\-\_\-len\mbox{]}, }
+\item[{int $\ast$}]{index}
+\end{DoxyParamCaption}
+)}}\label{board_8h_a2e2f22335f139f762f82759c1d465c40}
+
+
+used by check\-\_\-first\-\_\-play function, Gets the letter in the tile to the bottom and amends it to the string Recusrively continues until the string is amended with all letters aligned vertically 
+
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{board_8h_a8354a06da54268d9a7fd14df0e7f8c68}{check\-\_\-first\-\_\-play} 
+\end{DoxySeeAlso}
+\begin{DoxyAuthor}{Author}
+Abdallah 
+\end{DoxyAuthor}
+\hypertarget{board_8h_aa64a07088e2cd195eb6782d34eb3efb1}{\index{board.\-h@{board.\-h}!amend\-\_\-letter\-\_\-bottom\-\_\-n@{amend\-\_\-letter\-\_\-bottom\-\_\-n}}
+\index{amend\-\_\-letter\-\_\-bottom\-\_\-n@{amend\-\_\-letter\-\_\-bottom\-\_\-n}!board.h@{board.\-h}}
+\subsubsection[{amend\-\_\-letter\-\_\-bottom\-\_\-n}]{\setlength{\rightskip}{0pt plus 5cm}void amend\-\_\-letter\-\_\-bottom\-\_\-n (
+\begin{DoxyParamCaption}
+\item[{{\bf tile} $\ast$}]{board\mbox{[}max\-\_\-rc\mbox{]}\mbox{[}max\-\_\-rc\mbox{]}, }
+\item[{{\bf tile} $\ast$}]{board\-\_\-prev\mbox{[}max\-\_\-rc\mbox{]}\mbox{[}max\-\_\-rc\mbox{]}, }
+\item[{int}]{rows, }
+\item[{int}]{cols, }
+\item[{char}]{str\mbox{[}word\-\_\-len\mbox{]}, }
+\item[{int $\ast$}]{index, }
+\item[{int $\ast$}]{temp\-\_\-temp, }
+\item[{int $\ast$}]{D\-W\-\_\-flag, }
+\item[{int $\ast$}]{T\-W\-\_\-flag, }
+\item[{int $\ast$}]{connection\-\_\-flag}
+\end{DoxyParamCaption}
+)}}\label{board_8h_aa64a07088e2cd195eb6782d34eb3efb1}
+
+
+Gets the letter in the tile to the bottom and amends it to the string for the nth play where n $>$ 1 Recusrively continues until the string is amended with all letters aligned horizontally used inside check\-\_\-board function to help getting the added word. 
+
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{board_8h_a2b62b1ca7d12590bcf8c2c3a52a5d051}{check\-\_\-board} 
+\end{DoxySeeAlso}
+\begin{DoxyAuthor}{Author}
+Abdallah 
+\end{DoxyAuthor}
+\hypertarget{board_8h_a6a9559aec895771043262e6218b5b3fc}{\index{board.\-h@{board.\-h}!amend\-\_\-letter\-\_\-right@{amend\-\_\-letter\-\_\-right}}
+\index{amend\-\_\-letter\-\_\-right@{amend\-\_\-letter\-\_\-right}!board.h@{board.\-h}}
+\subsubsection[{amend\-\_\-letter\-\_\-right}]{\setlength{\rightskip}{0pt plus 5cm}void amend\-\_\-letter\-\_\-right (
+\begin{DoxyParamCaption}
+\item[{{\bf tile} $\ast$}]{board\mbox{[}max\-\_\-rc\mbox{]}\mbox{[}max\-\_\-rc\mbox{]}, }
+\item[{int}]{rows, }
+\item[{int}]{cols, }
+\item[{char}]{str\mbox{[}word\-\_\-len\mbox{]}, }
+\item[{int $\ast$}]{index}
+\end{DoxyParamCaption}
+)}}\label{board_8h_a6a9559aec895771043262e6218b5b3fc}
+
+
+used by check\-\_\-first\-\_\-play function, gets the letter in the tile to the right and amends it to the string Recusrively continues until the string is amended with all letters aligned horizontally 
+
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{board_8h_a8354a06da54268d9a7fd14df0e7f8c68}{check\-\_\-first\-\_\-play} 
+\end{DoxySeeAlso}
+\begin{DoxyAuthor}{Author}
+Abdallah
+\end{DoxyAuthor}
+used by check\-\_\-first\-\_\-play function, gets the letter in the tile to the right and amends it to the string Recusrively continues until the string is amended with all letters aligned horizontally
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em index} & is the index of the letters inside the formed string,used to add letters correctly \\
+\hline
+\mbox{\tt in}  & {\em str} & the string where the word will be saved Recusrively continues until the string is amended with all letters aligned horizontally \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{board_8h_a8354a06da54268d9a7fd14df0e7f8c68}{check\-\_\-first\-\_\-play} 
+\end{DoxySeeAlso}
+\begin{DoxyAuthor}{Author}
+Abdallah 
+\end{DoxyAuthor}
+\hypertarget{board_8h_a1844e43d35d069bbba59b3ec540ea5e3}{\index{board.\-h@{board.\-h}!amend\-\_\-letter\-\_\-right\-\_\-n@{amend\-\_\-letter\-\_\-right\-\_\-n}}
+\index{amend\-\_\-letter\-\_\-right\-\_\-n@{amend\-\_\-letter\-\_\-right\-\_\-n}!board.h@{board.\-h}}
+\subsubsection[{amend\-\_\-letter\-\_\-right\-\_\-n}]{\setlength{\rightskip}{0pt plus 5cm}void amend\-\_\-letter\-\_\-right\-\_\-n (
+\begin{DoxyParamCaption}
+\item[{{\bf tile} $\ast$}]{board\mbox{[}max\-\_\-rc\mbox{]}\mbox{[}max\-\_\-rc\mbox{]}, }
+\item[{{\bf tile} $\ast$}]{board\-\_\-prev\mbox{[}max\-\_\-rc\mbox{]}\mbox{[}max\-\_\-rc\mbox{]}, }
+\item[{int}]{rows, }
+\item[{int}]{cols, }
+\item[{char}]{str\mbox{[}word\-\_\-len\mbox{]}, }
+\item[{int $\ast$}]{index, }
+\item[{int $\ast$}]{temp\-\_\-temp, }
+\item[{int $\ast$}]{D\-W\-\_\-flag, }
+\item[{int $\ast$}]{T\-W\-\_\-flag, }
+\item[{int $\ast$}]{connection\-\_\-flag}
+\end{DoxyParamCaption}
+)}}\label{board_8h_a1844e43d35d069bbba59b3ec540ea5e3}
+
+
+Gets the letter in the tile to the right and amends it to the string for the nth play where n $>$ 1 Recusrively continues until the string is amended with all letters aligned horizontally used inside check\-\_\-board function to help getting the added word. 
+
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{board_8h_a2b62b1ca7d12590bcf8c2c3a52a5d051}{check\-\_\-board} 
+\end{DoxySeeAlso}
+\begin{DoxyAuthor}{Author}
+Abdallah 
+\end{DoxyAuthor}
+\hypertarget{board_8h_a2b62b1ca7d12590bcf8c2c3a52a5d051}{\index{board.\-h@{board.\-h}!check\-\_\-board@{check\-\_\-board}}
+\index{check\-\_\-board@{check\-\_\-board}!board.h@{board.\-h}}
+\subsubsection[{check\-\_\-board}]{\setlength{\rightskip}{0pt plus 5cm}int check\-\_\-board (
+\begin{DoxyParamCaption}
+\item[{{\bf tile} $\ast$}]{board\mbox{[}max\-\_\-rc\mbox{]}\mbox{[}max\-\_\-rc\mbox{]}, }
+\item[{{\bf tile} $\ast$}]{board\-\_\-prev\mbox{[}max\-\_\-rc\mbox{]}\mbox{[}max\-\_\-rc\mbox{]}, }
+\item[{char}]{words\mbox{[}max\-\_\-words\mbox{]}\mbox{[}word\-\_\-len\mbox{]}, }
+\item[{int $\ast$}]{temp\-\_\-score}
+\end{DoxyParamCaption}
+)}}\label{board_8h_a2b62b1ca7d12590bcf8c2c3a52a5d051}
+
+
+Checks board for the added word or words Checks the validity of the added tiles in terms of the position of the tiles, and existence in dictionary returns the added word/words if valid in the array of strings. 
+
+\begin{DoxyAuthor}{Author}
+Abdallah 
+\end{DoxyAuthor}
+\hypertarget{board_8h_a8354a06da54268d9a7fd14df0e7f8c68}{\index{board.\-h@{board.\-h}!check\-\_\-first\-\_\-play@{check\-\_\-first\-\_\-play}}
+\index{check\-\_\-first\-\_\-play@{check\-\_\-first\-\_\-play}!board.h@{board.\-h}}
+\subsubsection[{check\-\_\-first\-\_\-play}]{\setlength{\rightskip}{0pt plus 5cm}int check\-\_\-first\-\_\-play (
+\begin{DoxyParamCaption}
+\item[{{\bf tile} $\ast$}]{board\mbox{[}max\-\_\-rc\mbox{]}\mbox{[}max\-\_\-rc\mbox{]}, }
+\item[{char}]{str\mbox{[}word\-\_\-len\mbox{]}}
+\end{DoxyParamCaption}
+)}}\label{board_8h_a8354a06da54268d9a7fd14df0e7f8c68}
+
+
+used by check\-\_\-board function to check the first play it is considered as a special case as\-: only one word is added, the word does not have to touch an already existing word 
+
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{board_8c_a4051121268f44a61b0270751bb4e7de4}{check\-\_\-board} 
+\end{DoxySeeAlso}
+\begin{DoxyAuthor}{Author}
+Abdallah
+
+Abdallah 
+\end{DoxyAuthor}
+\hypertarget{board_8h_afb9aaac2b6e48a4bab1ba57f4287bcac}{\index{board.\-h@{board.\-h}!copy\-\_\-board@{copy\-\_\-board}}
+\index{copy\-\_\-board@{copy\-\_\-board}!board.h@{board.\-h}}
+\subsubsection[{copy\-\_\-board}]{\setlength{\rightskip}{0pt plus 5cm}void copy\-\_\-board (
+\begin{DoxyParamCaption}
+\item[{{\bf tile} $\ast$}]{copy\mbox{[}max\-\_\-rc\mbox{]}\mbox{[}max\-\_\-rc\mbox{]}, }
+\item[{{\bf tile} $\ast$}]{paste\mbox{[}max\-\_\-rc\mbox{]}\mbox{[}max\-\_\-rc\mbox{]}}
+\end{DoxyParamCaption}
+)}}\label{board_8h_afb9aaac2b6e48a4bab1ba57f4287bcac}
+
+
+copy the content of the first input board into the second input board 
+
+\begin{DoxyAuthor}{Author}
+Abdallah 
+\end{DoxyAuthor}
+\hypertarget{board_8h_a2735215125c05f9583c668b99bda8fd2}{\index{board.\-h@{board.\-h}!delimit\-\_\-string@{delimit\-\_\-string}}
+\index{delimit\-\_\-string@{delimit\-\_\-string}!board.h@{board.\-h}}
+\subsubsection[{delimit\-\_\-string}]{\setlength{\rightskip}{0pt plus 5cm}void delimit\-\_\-string (
+\begin{DoxyParamCaption}
+\item[{char}]{word\mbox{[}word\-\_\-len\mbox{]}, }
+\item[{int}]{start\-\_\-i, }
+\item[{int}]{start\-\_\-cols, }
+\item[{int}]{end\-\_\-i, }
+\item[{int}]{end\-\_\-cols}
+\end{DoxyParamCaption}
+)}}\label{board_8h_a2735215125c05f9583c668b99bda8fd2}
+
+
+saves the starting and ending indices ( row and col number ) in the position \mbox{[}20\mbox{]} for starting row number and \mbox{[}23\mbox{]} for starting col number in position \mbox{[}26\mbox{]} for ending row number and \mbox{[}29\mbox{]} for ending col number 
+
+\begin{DoxyAuthor}{Author}
+Abdallah
+\end{DoxyAuthor}
+saves the starting and ending indices ( row and col number ) in the position \mbox{[}20\mbox{]} for starting row number and \mbox{[}23\mbox{]} for starting col number in position \mbox{[}26\mbox{]} for ending row number and \mbox{[}29\mbox{]} for ending col number \hypertarget{board_8h_a4fec3f53ddeb6c8ea5c9c2c1bc78b2c8}{\index{board.\-h@{board.\-h}!display\-\_\-board@{display\-\_\-board}}
+\index{display\-\_\-board@{display\-\_\-board}!board.h@{board.\-h}}
+\subsubsection[{display\-\_\-board}]{\setlength{\rightskip}{0pt plus 5cm}void display\-\_\-board (
+\begin{DoxyParamCaption}
+\item[{{\bf tile} $\ast$}]{board\mbox{[}max\-\_\-rc\mbox{]}\mbox{[}max\-\_\-rc\mbox{]}}
+\end{DoxyParamCaption}
+)}}\label{board_8h_a4fec3f53ddeb6c8ea5c9c2c1bc78b2c8}
+
+
+display\-\_\-board function displays the scrabble board to the user. 
+
+\textbackslash{} author Abdallah
+
+\begin{DoxyAuthor}{Author}
+Abdallah 
+\end{DoxyAuthor}
+\hypertarget{board_8h_a88ffaee36a7c5ffce80d598708342573}{\index{board.\-h@{board.\-h}!get\-\_\-ending\-\_\-col@{get\-\_\-ending\-\_\-col}}
+\index{get\-\_\-ending\-\_\-col@{get\-\_\-ending\-\_\-col}!board.h@{board.\-h}}
+\subsubsection[{get\-\_\-ending\-\_\-col}]{\setlength{\rightskip}{0pt plus 5cm}int get\-\_\-ending\-\_\-col (
+\begin{DoxyParamCaption}
+\item[{char}]{word\mbox{[}word\-\_\-len\mbox{]}}
+\end{DoxyParamCaption}
+)}}\label{board_8h_a88ffaee36a7c5ffce80d598708342573}
+
+
+gets the ending col number for a word stored in the mentioned position in the string 
+
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{board_8c_a436145154bd9c74257b7d1b5a386ec97}{ending\-\_\-col\-\_\-index} 
+\end{DoxySeeAlso}
+\begin{DoxyAuthor}{Author}
+Abdallah 
+\end{DoxyAuthor}
+\hypertarget{board_8h_a77c41822a2be98830b5f2cfac6ca0e9b}{\index{board.\-h@{board.\-h}!get\-\_\-ending\-\_\-rows@{get\-\_\-ending\-\_\-rows}}
+\index{get\-\_\-ending\-\_\-rows@{get\-\_\-ending\-\_\-rows}!board.h@{board.\-h}}
+\subsubsection[{get\-\_\-ending\-\_\-rows}]{\setlength{\rightskip}{0pt plus 5cm}int get\-\_\-ending\-\_\-rows (
+\begin{DoxyParamCaption}
+\item[{char}]{word\mbox{[}word\-\_\-len\mbox{]}}
+\end{DoxyParamCaption}
+)}}\label{board_8h_a77c41822a2be98830b5f2cfac6ca0e9b}
+
+
+gets the ending row number for a word stored in the mentioned position in the string 
+
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{board_8c_a58b47419dc9961174411f86b0b3850ea}{ending\-\_\-row\-\_\-index} 
+\end{DoxySeeAlso}
+\begin{DoxyAuthor}{Author}
+Abdallah 
+\end{DoxyAuthor}
+\hypertarget{board_8h_a3c52d72073937f9e14687ec761c2fa97}{\index{board.\-h@{board.\-h}!get\-\_\-original@{get\-\_\-original}}
+\index{get\-\_\-original@{get\-\_\-original}!board.h@{board.\-h}}
+\subsubsection[{get\-\_\-original}]{\setlength{\rightskip}{0pt plus 5cm}{\bf tile} get\-\_\-original (
+\begin{DoxyParamCaption}
+\item[{int}]{rows, }
+\item[{int}]{cols}
+\end{DoxyParamCaption}
+)}}\label{board_8h_a3c52d72073937f9e14687ec761c2fa97}
+
+
+returns the imaginary tile of the original (empty board) either returns an empty ( Normal tile on the board ), D\-L (Double Letter ), D\-W (Double Word ), T\-L (Triple Letter), T\-W (Triple Word ) 
+
+\begin{DoxyAuthor}{Author}
+Abdallah 
+\end{DoxyAuthor}
+\hypertarget{board_8h_a12b37aa16e9873d032dba2ea92ad7194}{\index{board.\-h@{board.\-h}!get\-\_\-starting\-\_\-col@{get\-\_\-starting\-\_\-col}}
+\index{get\-\_\-starting\-\_\-col@{get\-\_\-starting\-\_\-col}!board.h@{board.\-h}}
+\subsubsection[{get\-\_\-starting\-\_\-col}]{\setlength{\rightskip}{0pt plus 5cm}int get\-\_\-starting\-\_\-col (
+\begin{DoxyParamCaption}
+\item[{char}]{word\mbox{[}word\-\_\-len\mbox{]}}
+\end{DoxyParamCaption}
+)}}\label{board_8h_a12b37aa16e9873d032dba2ea92ad7194}
+
+
+gets the starting col number for a word stored in the mentioned position in the string 
+
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{board_8c_ae0c198679c6daee8ca169762582b98e3}{starting\-\_\-col\-\_\-index} 
+\end{DoxySeeAlso}
+\begin{DoxyAuthor}{Author}
+Abdallah 
+\end{DoxyAuthor}
+\hypertarget{board_8h_af4edd4ec3c11de3861b0a1fdbdc6f4fa}{\index{board.\-h@{board.\-h}!get\-\_\-starting\-\_\-rows@{get\-\_\-starting\-\_\-rows}}
+\index{get\-\_\-starting\-\_\-rows@{get\-\_\-starting\-\_\-rows}!board.h@{board.\-h}}
+\subsubsection[{get\-\_\-starting\-\_\-rows}]{\setlength{\rightskip}{0pt plus 5cm}int get\-\_\-starting\-\_\-rows (
+\begin{DoxyParamCaption}
+\item[{char}]{word\mbox{[}word\-\_\-len\mbox{]}}
+\end{DoxyParamCaption}
+)}}\label{board_8h_af4edd4ec3c11de3861b0a1fdbdc6f4fa}
+
+
+gets the starting row number for a word stored in the mentioned position in the string 
+
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{board_8c_a8752247994e49b8d79aa10d0bf5e18e1}{starting\-\_\-row\-\_\-index} 
+\end{DoxySeeAlso}
+\begin{DoxyAuthor}{Author}
+Abdallah 
+\end{DoxyAuthor}
+\hypertarget{board_8h_a52c31c2930b59895fbafb97f4a361829}{\index{board.\-h@{board.\-h}!horizontal\-\_\-start@{horizontal\-\_\-start}}
+\index{horizontal\-\_\-start@{horizontal\-\_\-start}!board.h@{board.\-h}}
+\subsubsection[{horizontal\-\_\-start}]{\setlength{\rightskip}{0pt plus 5cm}int horizontal\-\_\-start (
+\begin{DoxyParamCaption}
+\item[{{\bf tile} $\ast$}]{board\mbox{[}max\-\_\-rc\mbox{]}\mbox{[}max\-\_\-rc\mbox{]}, }
+\item[{int}]{rows, }
+\item[{int}]{cols}
+\end{DoxyParamCaption}
+)}}\label{board_8h_a52c31c2930b59895fbafb97f4a361829}
+
+
+for the nth play where n $>$ 1 the function returns the horizontal starting point of a word Used by the check\-\_\-board function to know where to start amending to right returns the column number that the word starts at 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em board} & The current board \\
+\hline
+\mbox{\tt in}  & {\em i} & the row number where the new tile was found \\
+\hline
+\mbox{\tt in}  & {\em j} & the column number where the new tile was found \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{board_8h_a2b62b1ca7d12590bcf8c2c3a52a5d051}{check\-\_\-board} 
+\end{DoxySeeAlso}
+\begin{DoxyAuthor}{Author}
+Abdallah 
+\end{DoxyAuthor}
+\hypertarget{board_8h_a4643da841a1ebf90655b3c9446b9ee7f}{\index{board.\-h@{board.\-h}!is\-\_\-connected@{is\-\_\-connected}}
+\index{is\-\_\-connected@{is\-\_\-connected}!board.h@{board.\-h}}
+\subsubsection[{is\-\_\-connected}]{\setlength{\rightskip}{0pt plus 5cm}int is\-\_\-connected (
+\begin{DoxyParamCaption}
+\item[{{\bf tile} $\ast$}]{board\mbox{[}max\-\_\-rc\mbox{]}\mbox{[}max\-\_\-rc\mbox{]}, }
+\item[{int}]{rows, }
+\item[{int}]{cols}
+\end{DoxyParamCaption}
+)}}\label{board_8h_a4643da841a1ebf90655b3c9446b9ee7f}
+
+
+for the nth play where n $>$ 1 the function returns whether the found tile is not connected to any tile on the board -\/$>$ returns 0 connected to a tile in a horizontal way -\/$>$ returns 1 connected to a tile in a vertical way -\/$>$ returns 2 connected to tiles both horizontally and vertically returns 3 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em board} & The current board \\
+\hline
+\mbox{\tt in}  & {\em rows} & row number \\
+\hline
+\mbox{\tt in}  & {\em cols} & column number \\
+\hline
+\end{DoxyParams}
+\begin{DoxyAuthor}{Author}
+Abdallah 
+\end{DoxyAuthor}
+\hypertarget{board_8h_a6bf7bf957a9fa045b7d208a9b79d3ead}{\index{board.\-h@{board.\-h}!is\-\_\-connected\-\_\-to\-\_\-prev@{is\-\_\-connected\-\_\-to\-\_\-prev}}
+\index{is\-\_\-connected\-\_\-to\-\_\-prev@{is\-\_\-connected\-\_\-to\-\_\-prev}!board.h@{board.\-h}}
+\subsubsection[{is\-\_\-connected\-\_\-to\-\_\-prev}]{\setlength{\rightskip}{0pt plus 5cm}int is\-\_\-connected\-\_\-to\-\_\-prev (
+\begin{DoxyParamCaption}
+\item[{{\bf tile} $\ast$}]{board\-\_\-prev\mbox{[}max\-\_\-rc\mbox{]}\mbox{[}max\-\_\-rc\mbox{]}, }
+\item[{int}]{rows, }
+\item[{int}]{cols}
+\end{DoxyParamCaption}
+)}}\label{board_8h_a6bf7bf957a9fa045b7d208a9b79d3ead}
+
+
+returns true i\-F the tile is connected to a tile from the previous turn used by check\-\_\-board to ake sure that at least one of the added tiles is connected to a tile from a previous turn 
+
+\begin{DoxyAuthor}{Author}
+Abdallah 
+\end{DoxyAuthor}
+\hypertarget{board_8h_a3775a78d451fdab09fc9ee85d79356a7}{\index{board.\-h@{board.\-h}!new\-\_\-board@{new\-\_\-board}}
+\index{new\-\_\-board@{new\-\_\-board}!board.h@{board.\-h}}
+\subsubsection[{new\-\_\-board}]{\setlength{\rightskip}{0pt plus 5cm}void new\-\_\-board (
+\begin{DoxyParamCaption}
+\item[{{\bf tile} $\ast$}]{board\mbox{[}max\-\_\-rc\mbox{]}\mbox{[}max\-\_\-rc\mbox{]}}
+\end{DoxyParamCaption}
+)}}\label{board_8h_a3775a78d451fdab09fc9ee85d79356a7}
+
+
+new\-\_\-board function returns a 2\-D array of pointer 2 tiles Each tile pointer is pointing to an empty, D\-L, D\-W, T\-L, T\-W tiles. 
+
+\begin{DoxyAuthor}{Author}
+Frend and Abdallah
+\end{DoxyAuthor}
+/author Abdallah and Fred \hypertarget{board_8h_ab1311e13c9be8a44c8a4bcc06dd11aaa}{\index{board.\-h@{board.\-h}!pickup\-\_\-tile@{pickup\-\_\-tile}}
+\index{pickup\-\_\-tile@{pickup\-\_\-tile}!board.h@{board.\-h}}
+\subsubsection[{pickup\-\_\-tile}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bag} pickup\-\_\-tile (
+\begin{DoxyParamCaption}
+\item[{{\bf bag}}]{in\-\_\-hand, }
+\item[{{\bf tile} $\ast$}]{board\mbox{[}max\-\_\-rc\mbox{]}\mbox{[}max\-\_\-rc\mbox{]}, }
+\item[{int $\ast$}]{temp\-\_\-score, }
+\item[{int $\ast$}]{D\-W\-\_\-flag, }
+\item[{int $\ast$}]{T\-W\-\_\-flag}
+\end{DoxyParamCaption}
+)}}\label{board_8h_ab1311e13c9be8a44c8a4bcc06dd11aaa}
+
+
+Request player for index to remove tile from the board. 
+
+This tile should be in the same turn of play. After successful removal of tile temp\-\_\-score is decremented accordingly. author Fred
+
+This tile should be in the same turn of play. After successful removal of tile temp\-\_\-score is decremented accordingly. \begin{DoxyAuthor}{Author}
+Fred 
+\end{DoxyAuthor}
+\hypertarget{board_8h_aa491cd34ee45c0eced98b0f34f111973}{\index{board.\-h@{board.\-h}!place\-\_\-tile@{place\-\_\-tile}}
+\index{place\-\_\-tile@{place\-\_\-tile}!board.h@{board.\-h}}
+\subsubsection[{place\-\_\-tile}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bag} place\-\_\-tile (
+\begin{DoxyParamCaption}
+\item[{{\bf bag}}]{in\-\_\-hand, }
+\item[{{\bf tile} $\ast$}]{board\mbox{[}max\-\_\-rc\mbox{]}\mbox{[}max\-\_\-rc\mbox{]}, }
+\item[{int $\ast$}]{temp\-\_\-score, }
+\item[{int $\ast$}]{D\-W\-\_\-flag, }
+\item[{int $\ast$}]{T\-W\-\_\-flag}
+\end{DoxyParamCaption}
+)}}\label{board_8h_aa491cd34ee45c0eced98b0f34f111973}
+
+
+Asks player to place tile on the board and checks whether tile to be placed corresponds to any of the tiles in the player's hand. 
+
+Also request player to enter index to place the tile. \begin{DoxyAuthor}{Author}
+Fred 
+\end{DoxyAuthor}
+\hypertarget{board_8h_ab1d2a866e5444ea856647ee2cb815e4f}{\index{board.\-h@{board.\-h}!power@{power}}
+\index{power@{power}!board.h@{board.\-h}}
+\subsubsection[{power}]{\setlength{\rightskip}{0pt plus 5cm}int power (
+\begin{DoxyParamCaption}
+\item[{int}]{x, }
+\item[{int}]{n}
+\end{DoxyParamCaption}
+)}}\label{board_8h_ab1d2a866e5444ea856647ee2cb815e4f}
+
+
+Power function to return x$^\wedge$n to be used by update\-\_\-score function. 
+
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{board_8h_aa3fa56705b636fcfef1270f907b02fc7}{update\-\_\-score} 
+\end{DoxySeeAlso}
+\begin{DoxyAuthor}{Author}
+Abdallah 
+\end{DoxyAuthor}
+\hypertarget{board_8h_aa93380e887107243739a02e1125c6480}{\index{board.\-h@{board.\-h}!print\-\_\-words@{print\-\_\-words}}
+\index{print\-\_\-words@{print\-\_\-words}!board.h@{board.\-h}}
+\subsubsection[{print\-\_\-words}]{\setlength{\rightskip}{0pt plus 5cm}void print\-\_\-words (
+\begin{DoxyParamCaption}
+\item[{char}]{words\mbox{[}max\-\_\-words\mbox{]}\mbox{[}word\-\_\-len\mbox{]}, }
+\item[{int}]{words\-\_\-count}
+\end{DoxyParamCaption}
+)}}\label{board_8h_aa93380e887107243739a02e1125c6480}
+
+
+prints all words stored in the array of strings mainly for testing uses 
+
+\begin{DoxyAuthor}{Author}
+Abdallah 
+\end{DoxyAuthor}
+\hypertarget{board_8h_ac242b7ed7cf98986c5e81668fda1dacc}{\index{board.\-h@{board.\-h}!strcopy@{strcopy}}
+\index{strcopy@{strcopy}!board.h@{board.\-h}}
+\subsubsection[{strcopy}]{\setlength{\rightskip}{0pt plus 5cm}void strcopy (
+\begin{DoxyParamCaption}
+\item[{char}]{str1\mbox{[}word\-\_\-len\mbox{]}, }
+\item[{char}]{str2\mbox{[}word\-\_\-len\mbox{]}}
+\end{DoxyParamCaption}
+)}}\label{board_8h_ac242b7ed7cf98986c5e81668fda1dacc}
+
+
+copies the second input string into the first one because the strcop will not be sufficient as the strings used here have more than one \textbackslash{}0 
+
+\begin{DoxyAuthor}{Author}
+Abdallah 
+\end{DoxyAuthor}
+\hypertarget{board_8h_aa3fa56705b636fcfef1270f907b02fc7}{\index{board.\-h@{board.\-h}!update\-\_\-score@{update\-\_\-score}}
+\index{update\-\_\-score@{update\-\_\-score}!board.h@{board.\-h}}
+\subsubsection[{update\-\_\-score}]{\setlength{\rightskip}{0pt plus 5cm}int update\-\_\-score (
+\begin{DoxyParamCaption}
+\item[{int}]{score, }
+\item[{int $\ast$}]{tmp\-\_\-score, }
+\item[{int $\ast$}]{D\-W\-\_\-flag, }
+\item[{int $\ast$}]{T\-W\-\_\-flag}
+\end{DoxyParamCaption}
+)}}\label{board_8h_aa3fa56705b636fcfef1270f907b02fc7}
+
+
+When the player chooses to play his turn, if the added word is valid in terms of position and existence in the dictionary The score of the player is updated with the information of the temp\-\_\-score and the D\-W and T\-W flags used only in the first play. 
+
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{board_8h_a8354a06da54268d9a7fd14df0e7f8c68}{check\-\_\-first\-\_\-play} 
+\end{DoxySeeAlso}
+\begin{DoxyAuthor}{Author}
+Abdallah 
+\end{DoxyAuthor}
+\hypertarget{board_8h_aa398f4afb3c7b5fba438ac8945cd83c5}{\index{board.\-h@{board.\-h}!vertical\-\_\-start@{vertical\-\_\-start}}
+\index{vertical\-\_\-start@{vertical\-\_\-start}!board.h@{board.\-h}}
+\subsubsection[{vertical\-\_\-start}]{\setlength{\rightskip}{0pt plus 5cm}int vertical\-\_\-start (
+\begin{DoxyParamCaption}
+\item[{{\bf tile} $\ast$}]{board\mbox{[}max\-\_\-rc\mbox{]}\mbox{[}max\-\_\-rc\mbox{]}, }
+\item[{int}]{rows, }
+\item[{int}]{cols}
+\end{DoxyParamCaption}
+)}}\label{board_8h_aa398f4afb3c7b5fba438ac8945cd83c5}
+
+
+for the nth play where n $>$ 1 the function returns the vertical starting point of a word Used by the check\-\_\-board function to know where to start amending to bottom returns the rows number that the word starts at 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em board} & The current board \\
+\hline
+\mbox{\tt in}  & {\em rows} & the rows number where the new tile was found \\
+\hline
+\mbox{\tt in}  & {\em cols} & the column number where the new tile was found \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{board_8h_a2b62b1ca7d12590bcf8c2c3a52a5d051}{check\-\_\-board} 
+\end{DoxySeeAlso}
+\begin{DoxyAuthor}{Author}
+Abdallah 
+\end{DoxyAuthor}
+\hypertarget{board_8h_a12b396904113c9f66a672e7cb22246ff}{\index{board.\-h@{board.\-h}!word\-\_\-repeated@{word\-\_\-repeated}}
+\index{word\-\_\-repeated@{word\-\_\-repeated}!board.h@{board.\-h}}
+\subsubsection[{word\-\_\-repeated}]{\setlength{\rightskip}{0pt plus 5cm}int word\-\_\-repeated (
+\begin{DoxyParamCaption}
+\item[{char}]{new\-\_\-word\mbox{[}word\-\_\-len\mbox{]}, }
+\item[{char}]{words\mbox{[}max\-\_\-words\mbox{]}\mbox{[}word\-\_\-len\mbox{]}, }
+\item[{int}]{words\-\_\-count}
+\end{DoxyParamCaption}
+)}}\label{board_8h_a12b396904113c9f66a672e7cb22246ff}
+
+
+returns true if the word already exist in the array of strings 
+
+\begin{DoxyAuthor}{Author}
+Abdallah 
+\end{DoxyAuthor}

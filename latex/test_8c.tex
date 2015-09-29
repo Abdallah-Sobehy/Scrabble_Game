@@ -1,0 +1,223 @@
+\hypertarget{test_8c}{\section{test.\-c File Reference}
+\label{test_8c}\index{test.\-c@{test.\-c}}
+}
+
+
+tests the check\-\_\-board function, to be able to extract a word from the added tiles if they were put in valid positions It also checks if they exist in the dictionary Tested functions \-: newboard , check\-\_\-first\-\_\-play , display\-\_\-board , display\-\_\-bag , get\-\_\-letter , amend\-\_\-letter\-\_\-right, amend\-\_\-letter\-\_\-bottom  
+
+
+{\ttfamily \#include $<$stdio.\-h$>$}\\*
+{\ttfamily \#include $<$stdlib.\-h$>$}\\*
+{\ttfamily \#include \char`\"{}tile.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}bag.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}board.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}dictionary.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}test.\-h\char`\"{}}\\*
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{test_8c_aa070a6d6fc79db04642cc0328fdcd451}{word\-\_\-len}~32
+\begin{DoxyCompactList}\small\item\em length of any found word; each string will save the found word, then the number of D\-W, T\-W squares related to word the word length is 32 = 15 ( max word ) + \textbackslash{}0 + D\-W + \textbackslash{}0 + T\-W + \textbackslash{}0 + 2 characters to store starting row + \textbackslash{}0 \end{DoxyCompactList}\item 
+\hypertarget{test_8c_ad42d1b10fe384ff2049eec63d766ae4c}{\#define \hyperlink{test_8c_ad42d1b10fe384ff2049eec63d766ae4c}{max\-\_\-rc}~15}\label{test_8c_ad42d1b10fe384ff2049eec63d766ae4c}
+
+\begin{DoxyCompactList}\small\item\em the number of rows or columns in the scrabble game \end{DoxyCompactList}\item 
+\hypertarget{test_8c_a1a808f7d473e0027f882abc09ab63625}{\#define \hyperlink{test_8c_a1a808f7d473e0027f882abc09ab63625}{max\-\_\-words}~8}\label{test_8c_a1a808f7d473e0027f882abc09ab63625}
+
+\begin{DoxyCompactList}\small\item\em maximum number of words that can be played in one turn \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{test_8c_a559e881afb1fee1e929a62caf895cc59}{test\-\_\-horizontal\-\_\-valid} ()
+\begin{DoxyCompactList}\small\item\em The added word is valid in term of position (horizontally) exists in the dictionary. \end{DoxyCompactList}\item 
+void \hyperlink{test_8c_ab4cc6d9bd34eef5686f89361477ed6d9}{test\-\_\-vertical\-\_\-valid} ()
+\begin{DoxyCompactList}\small\item\em The added word is valid in term of position (vertically) and exists in the dictionary. \end{DoxyCompactList}\item 
+void \hyperlink{test_8c_a4d1631b5c66a4043ce4acb051c2ebd1d}{test\-\_\-horizontal\-\_\-invalid} ()
+\begin{DoxyCompactList}\small\item\em The added word is invalid in term of position (horizontally) but it does not exist in the dictionary. \end{DoxyCompactList}\item 
+void \hyperlink{test_8c_aa00e0885f1e8f923c4325014713d9630}{test\-\_\-vertical\-\_\-invalid} ()
+\begin{DoxyCompactList}\small\item\em The added word is valid in term of position (vertically) and it does not exist in the dictionary. \end{DoxyCompactList}\item 
+void \hyperlink{test_8c_af88306657e771672d4b023196dbabc41}{test\-\_\-empty} ()
+\begin{DoxyCompactList}\small\item\em The player tries to play the first turn without adding any tiles, a warning message is displayed to ask him to add a tile passing through the center. \end{DoxyCompactList}\item 
+void \hyperlink{test_8c_a231f4d371c1b22ed78bb2443a7276185}{test\-\_\-invalid1} ()
+\begin{DoxyCompactList}\small\item\em A valid vertical word (position and exist in the dictionary) but another tile is place in an unconnected square. \end{DoxyCompactList}\item 
+void \hyperlink{test_8c_ad234a8daff06ca661e0077e2e63a03c9}{test\-\_\-invalid2} ()
+\begin{DoxyCompactList}\small\item\em A valid horizontal word (position and exist in the dictionary) but another tile is place in an unconnected square. \end{DoxyCompactList}\item 
+void \hyperlink{test_8c_a5ac57b26f89bb4f53ddba218cfdf4438}{test\-\_\-invalid3} ()
+\begin{DoxyCompactList}\small\item\em Tiles are in an invalid position. \end{DoxyCompactList}\item 
+void \hyperlink{test_8c_af4c7939f54ae13dd25d2c9dd43157edd}{test\-\_\-invalid4} ()
+\begin{DoxyCompactList}\small\item\em A word placed but not passing by the central square. \end{DoxyCompactList}\item 
+\hypertarget{test_8c_a0ddf1224851353fc92bfbff6f499fa97}{int {\bfseries main} (int argc, char $\ast$argv\mbox{[}$\,$\mbox{]})}\label{test_8c_a0ddf1224851353fc92bfbff6f499fa97}
+
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{test_8c_a0d590f00dc49b35230e124f4c9dd534c}{char {\bfseries str} \mbox{[}\hyperlink{ui_8c_a1a808f7d473e0027f882abc09ab63625}{max\-\_\-words}\mbox{]}\mbox{[}\hyperlink{ui_8c_aa070a6d6fc79db04642cc0328fdcd451}{word\-\_\-len}\mbox{]}}\label{test_8c_a0d590f00dc49b35230e124f4c9dd534c}
+
+\item 
+\hypertarget{test_8c_a335fe1ad608e00c2a6d3a2ec6eee5d99}{int {\bfseries temp\-\_\-score}}\label{test_8c_a335fe1ad608e00c2a6d3a2ec6eee5d99}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+tests the check\-\_\-board function, to be able to extract a word from the added tiles if they were put in valid positions It also checks if they exist in the dictionary Tested functions \-: newboard , check\-\_\-first\-\_\-play , display\-\_\-board , display\-\_\-bag , get\-\_\-letter , amend\-\_\-letter\-\_\-right, amend\-\_\-letter\-\_\-bottom \begin{DoxyAuthor}{Author}
+Abdallah 
+\end{DoxyAuthor}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{test_8c_aa070a6d6fc79db04642cc0328fdcd451}{\index{test.\-c@{test.\-c}!word\-\_\-len@{word\-\_\-len}}
+\index{word\-\_\-len@{word\-\_\-len}!test.c@{test.\-c}}
+\subsubsection[{word\-\_\-len}]{\setlength{\rightskip}{0pt plus 5cm}\#define word\-\_\-len~32}}\label{test_8c_aa070a6d6fc79db04642cc0328fdcd451}
+
+
+length of any found word; each string will save the found word, then the number of D\-W, T\-W squares related to word the word length is 32 = 15 ( max word ) + \textbackslash{}0 + D\-W + \textbackslash{}0 + T\-W + \textbackslash{}0 + 2 characters to store starting row + \textbackslash{}0 
+
+
+\begin{DoxyItemize}
+\item 2 characters to store starting col + \textbackslash{}0 + 2 characters to store ending row + \textbackslash{}0 + 2 characters to store ending col + \textbackslash{}0 
+\end{DoxyItemize}
+
+\subsection{Function Documentation}
+\hypertarget{test_8c_af88306657e771672d4b023196dbabc41}{\index{test.\-c@{test.\-c}!test\-\_\-empty@{test\-\_\-empty}}
+\index{test\-\_\-empty@{test\-\_\-empty}!test.c@{test.\-c}}
+\subsubsection[{test\-\_\-empty}]{\setlength{\rightskip}{0pt plus 5cm}void test\-\_\-empty (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{test_8c_af88306657e771672d4b023196dbabc41}
+
+
+The player tries to play the first turn without adding any tiles, a warning message is displayed to ask him to add a tile passing through the center. 
+
+returns an empty string for a board with no placed words
+
+\begin{DoxyAuthor}{Author}
+Abdallah 
+\end{DoxyAuthor}
+\hypertarget{test_8c_a4d1631b5c66a4043ce4acb051c2ebd1d}{\index{test.\-c@{test.\-c}!test\-\_\-horizontal\-\_\-invalid@{test\-\_\-horizontal\-\_\-invalid}}
+\index{test\-\_\-horizontal\-\_\-invalid@{test\-\_\-horizontal\-\_\-invalid}!test.c@{test.\-c}}
+\subsubsection[{test\-\_\-horizontal\-\_\-invalid}]{\setlength{\rightskip}{0pt plus 5cm}void test\-\_\-horizontal\-\_\-invalid (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{test_8c_a4d1631b5c66a4043ce4acb051c2ebd1d}
+
+
+The added word is invalid in term of position (horizontally) but it does not exist in the dictionary. 
+
+gets string of a horizontally placed valid word; valid in terms of positioning invalid as it does not exist in the dictionary
+
+\begin{DoxyAuthor}{Author}
+Abdallah 
+\end{DoxyAuthor}
+\hypertarget{test_8c_a559e881afb1fee1e929a62caf895cc59}{\index{test.\-c@{test.\-c}!test\-\_\-horizontal\-\_\-valid@{test\-\_\-horizontal\-\_\-valid}}
+\index{test\-\_\-horizontal\-\_\-valid@{test\-\_\-horizontal\-\_\-valid}!test.c@{test.\-c}}
+\subsubsection[{test\-\_\-horizontal\-\_\-valid}]{\setlength{\rightskip}{0pt plus 5cm}void test\-\_\-horizontal\-\_\-valid (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{test_8c_a559e881afb1fee1e929a62caf895cc59}
+
+
+The added word is valid in term of position (horizontally) exists in the dictionary. 
+
+gets string of a horizontally placed valid word; valid in terms of positioning Valid as it exists in the dictionary.
+
+\begin{DoxyAuthor}{Author}
+Abdallah 
+\end{DoxyAuthor}
+\hypertarget{test_8c_a231f4d371c1b22ed78bb2443a7276185}{\index{test.\-c@{test.\-c}!test\-\_\-invalid1@{test\-\_\-invalid1}}
+\index{test\-\_\-invalid1@{test\-\_\-invalid1}!test.c@{test.\-c}}
+\subsubsection[{test\-\_\-invalid1}]{\setlength{\rightskip}{0pt plus 5cm}void test\-\_\-invalid1 (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{test_8c_a231f4d371c1b22ed78bb2443a7276185}
+
+
+A valid vertical word (position and exist in the dictionary) but another tile is place in an unconnected square. 
+
+returns an empty string for placing tiles in invalid position a vertical word with a tile in an unconnected place
+
+\begin{DoxyAuthor}{Author}
+Abdallah 
+\end{DoxyAuthor}
+\hypertarget{test_8c_ad234a8daff06ca661e0077e2e63a03c9}{\index{test.\-c@{test.\-c}!test\-\_\-invalid2@{test\-\_\-invalid2}}
+\index{test\-\_\-invalid2@{test\-\_\-invalid2}!test.c@{test.\-c}}
+\subsubsection[{test\-\_\-invalid2}]{\setlength{\rightskip}{0pt plus 5cm}void test\-\_\-invalid2 (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{test_8c_ad234a8daff06ca661e0077e2e63a03c9}
+
+
+A valid horizontal word (position and exist in the dictionary) but another tile is place in an unconnected square. 
+
+returns an empty string for placing tiles in invalid position a horizontal word with a tile in an unconnected place
+
+\begin{DoxyAuthor}{Author}
+Abdallah 
+\end{DoxyAuthor}
+\hypertarget{test_8c_a5ac57b26f89bb4f53ddba218cfdf4438}{\index{test.\-c@{test.\-c}!test\-\_\-invalid3@{test\-\_\-invalid3}}
+\index{test\-\_\-invalid3@{test\-\_\-invalid3}!test.c@{test.\-c}}
+\subsubsection[{test\-\_\-invalid3}]{\setlength{\rightskip}{0pt plus 5cm}void test\-\_\-invalid3 (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{test_8c_a5ac57b26f89bb4f53ddba218cfdf4438}
+
+
+Tiles are in an invalid position. 
+
+returns an empty string for placing tiles in invalid position Tile connected but not aligning in one row or column
+
+Though connected, they are not aligning in one row or column \begin{DoxyAuthor}{Author}
+Abdallah 
+\end{DoxyAuthor}
+\hypertarget{test_8c_af4c7939f54ae13dd25d2c9dd43157edd}{\index{test.\-c@{test.\-c}!test\-\_\-invalid4@{test\-\_\-invalid4}}
+\index{test\-\_\-invalid4@{test\-\_\-invalid4}!test.c@{test.\-c}}
+\subsubsection[{test\-\_\-invalid4}]{\setlength{\rightskip}{0pt plus 5cm}void test\-\_\-invalid4 (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{test_8c_af4c7939f54ae13dd25d2c9dd43157edd}
+
+
+A word placed but not passing by the central square. 
+
+\begin{DoxyAuthor}{Author}
+Abdallah 
+\end{DoxyAuthor}
+\hypertarget{test_8c_aa00e0885f1e8f923c4325014713d9630}{\index{test.\-c@{test.\-c}!test\-\_\-vertical\-\_\-invalid@{test\-\_\-vertical\-\_\-invalid}}
+\index{test\-\_\-vertical\-\_\-invalid@{test\-\_\-vertical\-\_\-invalid}!test.c@{test.\-c}}
+\subsubsection[{test\-\_\-vertical\-\_\-invalid}]{\setlength{\rightskip}{0pt plus 5cm}void test\-\_\-vertical\-\_\-invalid (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{test_8c_aa00e0885f1e8f923c4325014713d9630}
+
+
+The added word is valid in term of position (vertically) and it does not exist in the dictionary. 
+
+gets string of a vertically placed valid word in terms of position invalid as it does not exist in the dictionary
+
+\begin{DoxyAuthor}{Author}
+Abdallah 
+\end{DoxyAuthor}
+\hypertarget{test_8c_ab4cc6d9bd34eef5686f89361477ed6d9}{\index{test.\-c@{test.\-c}!test\-\_\-vertical\-\_\-valid@{test\-\_\-vertical\-\_\-valid}}
+\index{test\-\_\-vertical\-\_\-valid@{test\-\_\-vertical\-\_\-valid}!test.c@{test.\-c}}
+\subsubsection[{test\-\_\-vertical\-\_\-valid}]{\setlength{\rightskip}{0pt plus 5cm}void test\-\_\-vertical\-\_\-valid (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{test_8c_ab4cc6d9bd34eef5686f89361477ed6d9}
+
+
+The added word is valid in term of position (vertically) and exists in the dictionary. 
+
+gets string of a vertically placed valid word in terms of position Valid as it exists in the dictionary
+
+\begin{DoxyAuthor}{Author}
+Abdallah 
+\end{DoxyAuthor}

@@ -1,0 +1,99 @@
+\hypertarget{test__place_8c}{\section{test\-\_\-place.\-c File Reference}
+\label{test__place_8c}\index{test\-\_\-place.\-c@{test\-\_\-place.\-c}}
+}
+
+
+The file contains implementation for test cases for the below functions.  
+
+
+{\ttfamily \#include $<$stdio.\-h$>$}\\*
+{\ttfamily \#include $<$stdlib.\-h$>$}\\*
+{\ttfamily \#include $<$string.\-h$>$}\\*
+{\ttfamily \#include $<$ctype.\-h$>$}\\*
+{\ttfamily \#include \char`\"{}tile.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}bag.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}board.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}test.\-h\char`\"{}}\\*
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{test__place_8c_ad42d1b10fe384ff2049eec63d766ae4c}{\#define \hyperlink{test__place_8c_ad42d1b10fe384ff2049eec63d766ae4c}{max\-\_\-rc}~15}\label{test__place_8c_ad42d1b10fe384ff2049eec63d766ae4c}
+
+\begin{DoxyCompactList}\small\item\em the number of rows or columns in the scrabble game \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{test__place_8c_a568e98fcb037de172df6541f17f94821}{place\-\_\-tile\-\_\-valid} ()
+\begin{DoxyCompactList}\small\item\em Test the place tile function for the board. \end{DoxyCompactList}\item 
+void \hyperlink{test__place_8c_a31d7c682e46a26820cfb108b23d6b6f3}{pickup\-\_\-tile\-\_\-valid} ()
+\begin{DoxyCompactList}\small\item\em Test the place tile function for the board. \end{DoxyCompactList}\item 
+void \hyperlink{test__place_8c_a4e7c283ea55c9a70ab5e573ad65e711a}{pickup\-\_\-tile\-\_\-invalid} ()
+\begin{DoxyCompactList}\small\item\em Test the pick up tile function for the board. \end{DoxyCompactList}\item 
+\hypertarget{test__place_8c_a9d97648e719384385ecc295d3b8dbfcb}{void \hyperlink{test__place_8c_a9d97648e719384385ecc295d3b8dbfcb}{place\-\_\-blank\-\_\-tile} ()}\label{test__place_8c_a9d97648e719384385ecc295d3b8dbfcb}
+
+\begin{DoxyCompactList}\small\item\em A test for assignment of character for a blank tile to be place on the board. \end{DoxyCompactList}\item 
+\hypertarget{test__place_8c_a5ac0b7b33f7d9a3b374713e6192ac2db}{void \hyperlink{test__place_8c_a5ac0b7b33f7d9a3b374713e6192ac2db}{pickup\-\_\-blank\-\_\-tile} ()}\label{test__place_8c_a5ac0b7b33f7d9a3b374713e6192ac2db}
+
+\begin{DoxyCompactList}\small\item\em A test to pickup an assigned blank tile from the board and making the tile blank again. \end{DoxyCompactList}\item 
+int \hyperlink{test__place_8c_a0254953ab526b5c0a9245bd0a2f50bfc}{main} (int argc, char argv\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em Test the place tile function for the board. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The file contains implementation for test cases for the below functions. \begin{DoxyAuthor}{Author}
+\-: Fred 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+\-: 11 -\/02-\/ 14 
+\end{DoxyDate}
+
+
+\subsection{Function Documentation}
+\hypertarget{test__place_8c_a0254953ab526b5c0a9245bd0a2f50bfc}{\index{test\-\_\-place.\-c@{test\-\_\-place.\-c}!main@{main}}
+\index{main@{main}!test_place.c@{test\-\_\-place.\-c}}
+\subsubsection[{main}]{\setlength{\rightskip}{0pt plus 5cm}int main (
+\begin{DoxyParamCaption}
+\item[{int}]{argc, }
+\item[{char}]{argv\mbox{[}$\,$\mbox{]}}
+\end{DoxyParamCaption}
+)}}\label{test__place_8c_a0254953ab526b5c0a9245bd0a2f50bfc}
+
+
+Test the place tile function for the board. 
+
+Tiles are placed on the board in the correct sequence \hypertarget{test__place_8c_a4e7c283ea55c9a70ab5e573ad65e711a}{\index{test\-\_\-place.\-c@{test\-\_\-place.\-c}!pickup\-\_\-tile\-\_\-invalid@{pickup\-\_\-tile\-\_\-invalid}}
+\index{pickup\-\_\-tile\-\_\-invalid@{pickup\-\_\-tile\-\_\-invalid}!test_place.c@{test\-\_\-place.\-c}}
+\subsubsection[{pickup\-\_\-tile\-\_\-invalid}]{\setlength{\rightskip}{0pt plus 5cm}void pickup\-\_\-tile\-\_\-invalid (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{test__place_8c_a4e7c283ea55c9a70ab5e573ad65e711a}
+
+
+Test the pick up tile function for the board. 
+
+Attempt to pick up tiles from indices without tiles. \hypertarget{test__place_8c_a31d7c682e46a26820cfb108b23d6b6f3}{\index{test\-\_\-place.\-c@{test\-\_\-place.\-c}!pickup\-\_\-tile\-\_\-valid@{pickup\-\_\-tile\-\_\-valid}}
+\index{pickup\-\_\-tile\-\_\-valid@{pickup\-\_\-tile\-\_\-valid}!test_place.c@{test\-\_\-place.\-c}}
+\subsubsection[{pickup\-\_\-tile\-\_\-valid}]{\setlength{\rightskip}{0pt plus 5cm}void pickup\-\_\-tile\-\_\-valid (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{test__place_8c_a31d7c682e46a26820cfb108b23d6b6f3}
+
+
+Test the place tile function for the board. 
+
+Test the pick up tile function for the board.
+
+Tiles are placed in the wrong sequence Test the pick up tile function for the board. Tiles are pick up from indices with tiles place on them \hypertarget{test__place_8c_a568e98fcb037de172df6541f17f94821}{\index{test\-\_\-place.\-c@{test\-\_\-place.\-c}!place\-\_\-tile\-\_\-valid@{place\-\_\-tile\-\_\-valid}}
+\index{place\-\_\-tile\-\_\-valid@{place\-\_\-tile\-\_\-valid}!test_place.c@{test\-\_\-place.\-c}}
+\subsubsection[{place\-\_\-tile\-\_\-valid}]{\setlength{\rightskip}{0pt plus 5cm}void place\-\_\-tile\-\_\-valid (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{test__place_8c_a568e98fcb037de172df6541f17f94821}
+
+
+Test the place tile function for the board. 
+
+Tiles are placed on the board in the correct sequence 

@@ -1,0 +1,87 @@
+\hypertarget{tile_8h}{\section{tile.\-h File Reference}
+\label{tile_8h}\index{tile.\-h@{tile.\-h}}
+}
+
+
+This header file contains the prototypes of the tiles and functions.  
+
+
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structtile}{tile}
+\begin{DoxyCompactList}\small\item\em Definition of the tile using a structure. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structtile}{tile} \hyperlink{tile_8h_aefb6cc60e2d1acf527fd17d326e439e6}{new\-\_\-tile} (char)
+\begin{DoxyCompactList}\small\item\em Initializes the tile with the input character and the corresponding point value. \end{DoxyCompactList}\item 
+\hyperlink{structtile}{tile} \hyperlink{tile_8h_a61179c8f07029cfdfecc7cae06820c41}{assign\-\_\-char} (\hyperlink{structtile}{tile})
+\begin{DoxyCompactList}\small\item\em Function to assign a character to the blank tile. \end{DoxyCompactList}\item 
+\hypertarget{tile_8h_aaf2fbcde48f95558e922547f37a28843}{int \hyperlink{tile_8h_aaf2fbcde48f95558e922547f37a28843}{get\-\_\-score} (\hyperlink{structtile}{tile})}\label{tile_8h_aaf2fbcde48f95558e922547f37a28843}
+
+\begin{DoxyCompactList}\small\item\em The get score function returns the point value of the input tile. \end{DoxyCompactList}\item 
+\hypertarget{tile_8h_ae11d75c06aab32c7d178715a9d88048b}{char \hyperlink{tile_8h_ae11d75c06aab32c7d178715a9d88048b}{get\-\_\-letter} (\hyperlink{structtile}{tile})}\label{tile_8h_ae11d75c06aab32c7d178715a9d88048b}
+
+\begin{DoxyCompactList}\small\item\em Returns the letter of the input tile. \end{DoxyCompactList}\item 
+int \hyperlink{tile_8h_a8da73be016fb6b62c1edcc18529748ee}{is\-\_\-equal} (\hyperlink{structtile}{tile} t1, \hyperlink{structtile}{tile} t2)
+\begin{DoxyCompactList}\small\item\em Returns true if the input tiles have the same letters. \end{DoxyCompactList}\item 
+\hypertarget{tile_8h_a2436f3f6bda4a331f9f895eafe52749b}{int \hyperlink{tile_8h_a2436f3f6bda4a331f9f895eafe52749b}{blank\-\_\-tile} (\hyperlink{structtile}{tile})}\label{tile_8h_a2436f3f6bda4a331f9f895eafe52749b}
+
+\begin{DoxyCompactList}\small\item\em Checks if the tile picked is blank. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This header file contains the prototypes of the tiles and functions. \begin{DoxyAuthor}{Author}
+\-: Abdallah \& Fred 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+\-: 05-\/01-\/15 
+\end{DoxyDate}
+
+
+\subsection{Function Documentation}
+\hypertarget{tile_8h_a61179c8f07029cfdfecc7cae06820c41}{\index{tile.\-h@{tile.\-h}!assign\-\_\-char@{assign\-\_\-char}}
+\index{assign\-\_\-char@{assign\-\_\-char}!tile.h@{tile.\-h}}
+\subsubsection[{assign\-\_\-char}]{\setlength{\rightskip}{0pt plus 5cm}{\bf tile} assign\-\_\-char (
+\begin{DoxyParamCaption}
+\item[{{\bf tile}}]{A}
+\end{DoxyParamCaption}
+)}}\label{tile_8h_a61179c8f07029cfdfecc7cae06820c41}
+
+
+Function to assign a character to the blank tile. 
+
+request user to choose a character of choice. blank tiles have point value of 0. \hypertarget{tile_8h_a8da73be016fb6b62c1edcc18529748ee}{\index{tile.\-h@{tile.\-h}!is\-\_\-equal@{is\-\_\-equal}}
+\index{is\-\_\-equal@{is\-\_\-equal}!tile.h@{tile.\-h}}
+\subsubsection[{is\-\_\-equal}]{\setlength{\rightskip}{0pt plus 5cm}int is\-\_\-equal (
+\begin{DoxyParamCaption}
+\item[{{\bf tile}}]{t1, }
+\item[{{\bf tile}}]{t2}
+\end{DoxyParamCaption}
+)}}\label{tile_8h_a8da73be016fb6b62c1edcc18529748ee}
+
+
+Returns true if the input tiles have the same letters. 
+
+Only the letters are compared not the point value so that we can take an input from user to choose a tile just by letter
+
+Returns true if the input tiles have the same letters. \hypertarget{tile_8h_aefb6cc60e2d1acf527fd17d326e439e6}{\index{tile.\-h@{tile.\-h}!new\-\_\-tile@{new\-\_\-tile}}
+\index{new\-\_\-tile@{new\-\_\-tile}!tile.h@{tile.\-h}}
+\subsubsection[{new\-\_\-tile}]{\setlength{\rightskip}{0pt plus 5cm}{\bf tile} new\-\_\-tile (
+\begin{DoxyParamCaption}
+\item[{char}]{letter}
+\end{DoxyParamCaption}
+)}}\label{tile_8h_aefb6cc60e2d1acf527fd17d326e439e6}
+
+
+Initializes the tile with the input character and the corresponding point value. 
+
+Initializes the tile with the input character and the corresponding point value.
+
+\begin{DoxyAuthor}{Authors}
+\-: Abdallah \& Fred 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+\-: 05-\/01-\/2015 
+\end{DoxyDate}
